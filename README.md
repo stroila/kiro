@@ -21,7 +21,7 @@ podman exec -it kiro-cli kiro-cli login --use-device-flow
 
 ## Check your identity
 ```
-host:~/src/kiro$ podman exec -it kiro-cli kiro-cli whoami
+podman exec -it kiro-cli kiro-cli whoami
 ```
 
 ## Ask questions
