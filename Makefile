@@ -16,6 +16,7 @@ build:  ## - Build the ${IMG} image
 .PHONY: run
 run:    ## - Run the secured image
 	@printf "\033[32m\xE2\x9c\x93 Run build ${IMG} image\n\033[0m"
+	@mkdir -p /opt/kiro ~/.aws/sso/cache
 	@podman run --name kiro-cli -d -v ~/.aws/sso/cache:/home/quser/.aws/sso/cache -v /opt/kiro:/workspace localhost/kiro-cli
 
 .PHONY: clean
