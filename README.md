@@ -16,16 +16,16 @@ Open that URL (either by Crtl+click on it or by copy/pasting it into a browser)
 - On the next window click "Confirm and continue"
 - On the next window click "Allow access"
 ```
-podman exec -it kiro-cli kiro-cli login --use-device-flow
+podman exec -it kiro kiro-cli login --use-device-flow
 ```
 
 ## Check your identity
 ```
-podman exec -it kiro-cli kiro-cli whoami
+podman exec -it kiro kiro-cli whoami
 ```
 
 ## Ask questions
 ```
-podman exec -it kiro-cli kiro-cli chat --no-interactive --trust-all-tools "describe the Zero Trust Pillars"
+podman exec -it kiro kiro-cli chat --no-interactive --trust-all-tools "describe the Zero Trust Pillars"
 ```
 

@@ -11,4 +11,3 @@ RUN curl -fsSL https://cli.kiro.dev/install | bash
 ENV PATH="/home/quser/.local/bin:$PATH"
 
 CMD ["sleep", "infinity"]
-
