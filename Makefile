@@ -16,7 +16,7 @@ build: ## - Build the $(IMG) image
 .PHONY: run
 run: ## - Run the secured image
 	@printf "\033[32m\xE2\x9c\x93 Run $(IMG) image\n\033[0m"
-	@mkdir -p data ~/.aws/sso/cache
+	@mkdir -p ~/.aws/sso/cache
 	@podman run --name $(IMG) -d \
 	-u $$(id -u):$$(id -g) \
 	-v $$HOME/.aws/sso/cache:/home/quser/.aws/sso/cache \
@@ -24,5 +24,5 @@ run: ## - Run the secured image
 
 .PHONY: clean
 clean: ## - Clean the image
-	@bash /opt/kiro/sbin/clean $(IMG)
+	@bash clean $(IMG)
 

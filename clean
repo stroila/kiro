@@ -1,0 +1,28 @@
+#!/bin/bash
+
+if [[ ! $1 ]]; then
+   echo "USAGE: $0 container"
+   exit 1
+fi
+
+n=$1
+
+name=$(podman ps|awk '{print $NF}'|grep ${n}|rev|cut -d' ' -f 1 | rev)
+iid=$(podman images|awk -F'/' '{print $NF}'|grep  ${n}| awk '{print $3}')
+cid=$(podman ps -a|awk '{print $NF}'|grep ${n}|cut -d' ' -f 1)
+
+echo ${name} ${cid} ${iid}
+
+if [[ ${name} ]]; then
+   podman kill ${name}
+fi
+
+if [[ ${cid} ]]; then
+   podman rm -f ${cid}
+fi
+
+if [[ ${iid} ]]; then
+   podman rmi -f ${iid}
+fi
+
+
